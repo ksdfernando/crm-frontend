@@ -7,7 +7,16 @@ function Sidebar() {
   const [userName, setUserName] = useState("Guest");
   const navigate = useNavigate();
 
-  
+  const handleLogout = () => {
+    // Clear login state
+    
+    localStorage.setItem('isLoggedIn', 'false');
+     console.log(localStorage.getItem("isLoggedIn"));
+     navigate('/login');
+     window.location.reload();  
+    Cookies.remove('token'); // if using token cookie
+    
+  };
 
   return (
     <div className="sidebar">
@@ -15,10 +24,12 @@ function Sidebar() {
       <ul>
         <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/add_users">Add Users</Link></li>
+        <li><Link to="/add_customers">Add customers</Link></li>
+        <li><Link to="/create_leads">Create Leads</Link></li>
         <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/settings">Settings</Link></li>
         <li>
-          <button  className="logout-button">
+          <button className="logout-button" onClick={handleLogout}>
             Logout
           </button>
         </li>

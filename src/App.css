@@ -216,3 +216,157 @@ background: #4f46e5; /* indigo-600 */
   text-align: right; /* align label to right side */
   margin-right: 8px;
 }
+
+/* app.css */
+
+/* Container */
+.max-w-md {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-10 {
+  margin-top: 2.5rem; /* 40px */
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.p-6 {
+  padding: 1.5rem; /* 24px */
+}
+
+.rounded-xl {
+  border-radius: 1rem; /* 16px */
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+              0 4px 6px -2px rgb(0 0 0 / 0.05);
+}
+
+.border {
+  border: 1px solid #e2e8f0; /* gray-300 */
+}
+
+/* Headings */
+.text-2xl {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Form */
+
+.space-y-4 > * + * {
+  margin-top: 1rem; /* 16px */
+}
+
+/* Inputs and select */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  border: 1px solid #cbd5e0; /* gray-300 */
+  border-radius: 0.5rem; /* 8px */
+  font-size: 1rem; /* 16px */
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Button */
+button[type="submit"] {
+  width: 100%;
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+/* User list */
+.mt-6 {
+  margin-top: 1.5rem; /* 24px */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.border-b {
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.py-1 {
+  padding-top: 0.25rem; /* 4px */
+  padding-bottom: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .max-w-md {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+
+
+
+

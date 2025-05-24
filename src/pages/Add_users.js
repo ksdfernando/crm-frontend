@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
+import '../App.css';
+
 
 const AddUser = () => {
   const [formData, setFormData] = useState({
@@ -59,7 +61,7 @@ const AddUser = () => {
       setUsers(updatedUsers.data);
 
     } catch (err) {
-      alert(`❌ Error: ${err.response?.data?.message || err.message}`);
+      // alert(`❌ Error: ${err.response?.data?.message || err.message}`);
     }
   };
 
@@ -122,7 +124,7 @@ const AddUser = () => {
       </form>
 
       <div className="mt-6">
-        <h3 className="text-lg font-semibold mb-2">Existing Users</h3>
+        
         <ul className="text-sm text-gray-700">
           {users.map(user => (
             <li key={user.id} className="border-b py-1">{user.name} ({user.email})</li>

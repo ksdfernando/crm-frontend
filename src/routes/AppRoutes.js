@@ -7,6 +7,7 @@ import NotFound from '../pages/NotFound';
 import Login from '../pages/login';
 import User from '../pages/User';
 import Add_users from '../pages/Add_users';
+import Add_customers from '../pages/add_customers';
 import '../App.css';
 
 function AppRoutes() {
@@ -16,6 +17,7 @@ function AppRoutes() {
       <Route path="/home" element={<Home />} />
       <Route path="/user" element={<User />} />
       <Route path="/add_users" element={<Add_users />} />
+      <Route path="/add_customers" element={<Add_customers />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

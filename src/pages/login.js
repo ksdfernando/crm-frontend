@@ -23,12 +23,18 @@ function Login() {
 
         if (res.data.status === "success") {
           alert("Login successful!");
+          
           localStorage.setItem("isLoggedIn", "true");
-
+          
           navigate('/user');
+          window.location.reload();
+          console.log(localStorage.getItem("isLoggedIn")); 
+
+
           
         } else {
           alert("Login failed: " + res.data.status);
+          localStorage.setItem('isLoggedIn', 'false');
         }
       })
       .catch(err => {

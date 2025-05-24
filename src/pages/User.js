@@ -25,7 +25,7 @@ function User() {
   return (
     
     <div>
-      <div> <Sidebar/></div>
+      {/* <div> <Sidebar/></div> */}
      <div className="user-dashboard">
       <h2>User Dashboard</h2>
       
