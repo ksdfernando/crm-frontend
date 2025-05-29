@@ -8,6 +8,9 @@ import Login from '../pages/login';
 import User from '../pages/User';
 import Add_users from '../pages/Add_users';
 import Add_customers from '../pages/add_customers';
+import Create_leads from '../pages/Create_leads';
+import My_leads from '../pages/My_leads';
+
 import '../App.css';
 
 function AppRoutes() {
@@ -18,6 +21,8 @@ function AppRoutes() {
       <Route path="/user" element={<User />} />
       <Route path="/add_users" element={<Add_users />} />
       <Route path="/add_customers" element={<Add_customers />} />
+       <Route path="/create_leads" element={<Create_leads />} />
+        <Route path="/my_leads" element={<My_leads />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

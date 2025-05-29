@@ -25,8 +25,9 @@ function Sidebar() {
         <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/add_users">Add Users</Link></li>
         <li><Link to="/add_customers">Add customers</Link></li>
-        <li><Link to="/create_leads">Create Leads</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/Create_leads">Create Leads</Link></li>
+          <li><Link to="/My_leads">MY Leads</Link></li>
+        <li><Link to="/User">Profile</Link></li>
         <li><Link to="/settings">Settings</Link></li>
         <li>
           <button className="logout-button" onClick={handleLogout}>
