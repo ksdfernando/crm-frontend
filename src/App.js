@@ -9,12 +9,14 @@ function App() {
   
  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-
+localStorage.setItem('isLoggedIn', 'false');
   return (
     <div className="container">
       <header><Header /></header>
-      {isLoggedIn && <div className="sidebar"><Sidebar /></div>}
-      <main><AppRoutes /></main>
+      <main>
+        {isLoggedIn && <div className="sidebar"><Sidebar /></div>}
+        <div className="content"><AppRoutes /></div>
+      </main>
       <footer><Footer /></footer>
     </div>
   );

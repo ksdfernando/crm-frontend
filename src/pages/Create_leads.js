@@ -8,6 +8,7 @@ const CreateLead = () => {
     phone: '',
     status: 'new',
     source: '',
+    interested_in: '',
     assigned_to: ''
   });
 
@@ -45,6 +46,7 @@ const CreateLead = () => {
         phone: '',
         status: 'new',
         source: '',
+        interested_in: '',
         assigned_to: ''
       });
     } catch (err) {
@@ -110,6 +112,14 @@ const CreateLead = () => {
           name="source"
           placeholder="Lead Source"
           value={formData.source}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-lg"
+        />
+          <input
+          type="text"
+          name="interested_in"
+          placeholder="Interested In"
+          value={formData.interested_in }
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded-lg"
         />
