@@ -33,9 +33,7 @@ function MyLeads() {
   }, []);
 
   
-//   const handleLeadClick = (id) => {
-//   navigate(`/lead_details/${id}`);
-// };
+
 const handleLeadClick = (lead) => {
   navigate(`/lead_details/${lead.lead_id}`, { state: { lead } });
 };
