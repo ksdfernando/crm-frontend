@@ -11,6 +11,8 @@ body {
 }
 
 .header, .footer {
+    position: relative;
+    z-index: 100;
   background-color: #007bff;
   color: white;
   padding: 1rem;
@@ -77,12 +79,16 @@ background: #4f46e5; /* indigo-600 */
 /* Sidebar styles */
 .sidebar {
   width: 240px;
-  height: 80vh;
+  height: 100vh;          
   background-color: #051d60;
   color: #fff;
   padding: 0px;
   box-sizing: border-box;
-  position: fixed;
+  position:fixed;
+  top: 0;
+   z-index: 9;
+
+  left: 0;
 }
 
 .sidebar h2 {
@@ -568,3 +574,42 @@ button[type="submit"]:hover {
   }
 }
 
+/* pipeline css  */
+.status-pipeline {
+  margin-top: 20px;
+  border-left: 3px solid #007bff;
+  padding-left: 20px;
+  position: relative;
+}
+
+.status-pipeline .stage {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  color: #555;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.status-pipeline .dot {
+  position: absolute;
+  left: -28px;
+  top: 0;
+  background-color: #fff;
+  font-size: 20px;
+}
+
+.status-pipeline .content strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #007bff;
+}
+
+.status-pipeline .content div {
+  font-size: 14px;
+  color: #333;
+}
+
+.status-pipeline .stage.active .dot {
+  transform: scale(1.2);
+}

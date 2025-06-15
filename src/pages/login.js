@@ -41,7 +41,7 @@ function Login() {
   console.error("Axios error:", err);
 
   if (err.response && err.response.status === 401) {
-    alert("Login failed: " + err.response.data.message); // shows "Wrong password" or "Email not found"
+    alert("Login failed: Email or Password wrong"  ); // shows "Wrong password" or "Email not found"
   } else {
     alert("Login failed: server error");
   }

@@ -52,9 +52,10 @@ function MyTickets() {
               <div>
                 <h3>🧾 Ticket ID: {ticket.ticket_id}</h3>
                 <p><strong>Subject:</strong> {ticket.subject}</p>
-                <p><strong>Description:</strong> {ticket.description}</p>
+                {/* <p><strong>Description:</strong> {ticket.description}</p> */}
                 <p><strong>Status:</strong> <span className="status">{ticket.status}</span></p>
                 <p><strong>Priority:</strong> <span className="priority">{ticket.priority}</span></p>
+                 <p><strong>Update:</strong> <span className="update">{ticket.update_note}</span></p>
                 <p>
                   <strong>Created At:</strong>{' '}
                   {format(new Date(ticket.created_at.replace(' ', 'T')), 'dd MMM yyyy, hh:mm a')}
@@ -63,6 +64,7 @@ function MyTickets() {
                 <p><strong>Customer Name:</strong> {ticket.name}</p>
                 <p><strong>Customer Email:</strong> {ticket.email}</p>
                 <p><strong>Customer Phone:</strong> {ticket.phone}</p>
+                
               </div>
             </button>
           ))}

@@ -20,6 +20,9 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
+      <br></br>  <br></br>
+        <h1>  .                .          . . . . . . . . . . .        </h1>
+         
       <h2>Welcome, {userName}</h2>
       <ul>
         <li><Link to="/dashboard">Dashboard</Link></li>
