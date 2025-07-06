@@ -22,17 +22,15 @@ function Sidebar() {
     clearHoverTimer();
     hoverTimer.current = setTimeout(() => {
       setOpenSection(section);
-    }, 80); // 2000ms = 2 seconds
+    }, 80); 
   };
 
   // Clear timer and optionally close dropdown on mouse leave
   const handleMouseLeave = () => {
     clearHoverTimer();
-    // Optional: uncomment next line to close dropdown when mouse leaves
-    // setOpenSection(null);
+   
   };
 
-  // Also allow toggling on click as before
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
@@ -46,7 +44,7 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      {/* <h2>CRM Dashboard</h2> */}
+     
 
       <div
         className="sidebar-section"
@@ -107,6 +105,23 @@ function Sidebar() {
           <li><Link to="/My_ticket">My Ticket</Link></li>
         </ul>
       )}
+
+      <div
+        className="sidebar-section"
+        onClick={() => toggleSection('task')}
+        onMouseEnter={() => handleMouseEnter('task')}
+        onMouseLeave={handleMouseLeave}
+      >
+        Task <span className={`arrow ${openSection === 'task' ? 'open' : ''}`}></span>
+      </div>
+      {openSection === 'task' && (
+        <ul className="sidebar-group">
+          <li><Link to="/Create_task">Create Task</Link></li>
+          <li><Link to="/My_task">My Tasks</Link></li>
+           <li><Link to="/All_tasks">All Tasks</Link></li>
+        </ul>
+      )}
+
 
       <div
         className="sidebar-section"
