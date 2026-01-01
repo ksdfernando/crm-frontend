@@ -13,49 +13,28 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    - name: Debug Secrets (Temporary)
-      run: |
-        echo "Checking secrets..."
-        echo "S3_BUCKET_NAME length: ${#S3_BUCKET_NAME}"
-        echo "AWS_REGION: ${{ secrets.AWS_REGION }}"
-        # Don't echo the actual secret values for security
-        if [ -z "${{ secrets.S3_BUCKET_NAME }}" ]; then
-          echo "ERROR: S3_BUCKET_NAME secret is empty or not set!"
-          exit 1
-        fi
-
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
-        cache: 'npm'
 
     - name: Install Dependencies
-      run: npm ci
+      run: npm install
 
     - name: Build React App
-      run: npm run build
-      env:
-        CI: false
+      run: CI=false npm run build
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
-
-    - name: Debug Before Deploy
+        aws-region:  us-east-1
+     
+   - name: Deploy to S3
       run: |
-        echo "Bucket name from secret: ${{ secrets.S3_BUCKET_NAME }}"
-        echo "AWS Region: ${{ secrets.AWS_REGION }}"
-        echo "Listing build directory:"
-        ls -la build/
+          aws s3 sync build/ s3://crm-frontend-sachithra/ --delete }}"
 
-    - name: Deploy to S3
-      run: |
-        echo "Deploying to bucket: ${{ secrets.S3_BUCKET_NAME }}"
-        aws s3 sync build/ s3://${{ secrets.S3_BUCKET_NAME }}/ --delete
 
     - name: Invalidate CloudFront Cache
       run: |
