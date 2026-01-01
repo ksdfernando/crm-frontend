@@ -11,30 +11,31 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # Updated to v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4 # Updated to v4
       with:
         node-version: 18
+        cache: 'npm' # Speeds up subsequent runs by caching dependencies
 
     - name: Install Dependencies
-      run: npm install
+      run: npm ci # 'npm ci' is preferred for CI environments over 'npm install'
 
     - name: Build React App
-      run: CI=false npm run build
+      run: npm run build
+      env:
+        CI: false # Keeps the build from failing on warnings
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v2
+      uses: aws-actions/configure-aws-credentials@v4 # Updated to v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region:  us-east-1
+        aws-region: us-east-1
      
-   - name: Deploy to S3
-      run: |
-          aws s3 sync build/ s3://crm-frontend-sachithra/ --delete }}"
-
+    - name: Deploy to S3
+      run: aws s3 sync build/ s3://crm-frontend-sachithra/ --delete
 
     - name: Invalidate CloudFront Cache
       run: |
