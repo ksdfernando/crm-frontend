@@ -19,7 +19,8 @@ import CustomerHistory from '../pages/CustomerHistory';
 import CreateTask from '../pages/Create_task';
 import My_task from '../pages/My_Task';
 import All_tasks from '../pages/All_task';
-
+import All_tickets from '../pages/All_tickets';
+import All_leads from '../pages/All_lead';
 
 import '../App.css';
 
@@ -43,9 +44,11 @@ function AppRoutes() {
       <Route path="/my_task" element={<My_task />} />
       <Route path="/lead_details/:id" element={<LeadDetails />} />
       <Route path="/ticket_details/:id" element={<TicketDetails />} />
-     <Route path="/create_ticket" element={<CreateTicket />} /> 
+      <Route path="/create_ticket" element={<CreateTicket />} /> 
       <Route path="/create_task" element={<CreateTask />} /> 
-        <Route path="/all_tasks" element={<All_tasks />} /> 
+      <Route path="/all_tasks" element={<All_tasks />} /> 
+      <Route path="/all_ticket" element={<All_tickets />} /> 
+        <Route path="/all_leads" element={<All_leads />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

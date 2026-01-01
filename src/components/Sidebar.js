@@ -88,6 +88,7 @@ function Sidebar() {
         <ul className="sidebar-group">
           <li><Link to="/Create_leads">Create Leads</Link></li>
           <li><Link to="/My_leads">My Leads</Link></li>
+           <li><Link to="/All_leads">All Leads</Link></li>
         </ul>
       )}
 
@@ -102,7 +103,8 @@ function Sidebar() {
       {openSection === 'tickets' && (
         <ul className="sidebar-group">
           <li><Link to="/create_ticket">Create Ticket</Link></li>
-          <li><Link to="/My_ticket">My Ticket</Link></li>
+          <li><Link to="/My_ticket">My Tickets</Link></li>
+           <li><Link to="/All_ticket">All Tickets</Link></li>
         </ul>
       )}
 
